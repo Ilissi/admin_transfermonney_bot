@@ -7,7 +7,6 @@ from loader import dp, bot
 import functools
 
 
-
 async def on_startup(dispatcher, url):
     await bot.delete_webhook()
     await bot.set_webhook(url)
