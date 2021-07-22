@@ -13,7 +13,6 @@ async def on_startup(dispatcher, url):
     await bot.delete_webhook()
     await bot.set_webhook(url)
     webhook = await bot.get_webhook_info()
-    print(webhook)
     # Устанавливаем дефолтные команды
     await set_default_commands(dispatcher)
     # Уведомляет про запуск
