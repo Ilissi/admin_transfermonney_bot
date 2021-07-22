@@ -4,10 +4,12 @@ import middlewares, filters, handlers
 from utils.notify_admins import on_startup_notify
 from utils.set_bot_commands import set_default_commands
 from loader import dp, bot
+from utils.db_api.database import create_db
 import functools
 
 
 async def on_startup(dispatcher, url):
+    await create_db()
     await bot.delete_webhook()
     await bot.set_webhook(url)
     webhook = await bot.get_webhook_info()
