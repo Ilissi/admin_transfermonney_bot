@@ -5,7 +5,7 @@ from utils.db_api.models import Orders
 
 
 async def get_orders(ticker_id) -> List[Orders]:
-    orders = await Orders.query.where(Orders.id == ticker_id).gino.all()
+    orders = await Orders.query.where(Orders.id == ticker_id).gino.first()
     return orders
 
 
@@ -22,4 +22,10 @@ async def get_order_by_diapason(from_date, to_date):
 async def get_all_orders():
     orders = await Orders.query.gino.all()
     return orders
+
+
+async def update_order(ticker_id, status_value, bool_status):
+    orders = await Orders.update.values(dict(status=status_value, accepted=bool_status)).where(Orders.id == ticker_id).gino.status()
+    return orders
+
 

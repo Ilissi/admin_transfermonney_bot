@@ -22,6 +22,9 @@ class Transactions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, ForeignKey('users.id_telegram'))
     amount = db.Column(db.Float)
+    status = db.Column(db.String(20))
+    type_transaction = db.Column(db.String(20))
+    pay_url = db.Column(db.String(1000))
     time_payed = db.Column(db.DateTime(timezone=True), default=datetime.datetime.utcnow)
 
 
