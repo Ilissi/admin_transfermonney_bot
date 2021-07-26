@@ -3,7 +3,7 @@ from environs import Env
 # Теперь используем вместо библиотеки python-dotenv библиотеку environs
 BOT_TOKEN = '1922146668:AAHME-AxbZInHNtDcKjYYVO1PvvFoR8OweI'
 ADMIN_BOT = '1849927581:AAE31wEKYZ-3bbsFWjzC35nAIMW-gDZnayI'
-ADMINS = [474053240]
+ADMINS = [474053240, 193523828]
 IP = 'localhost'
 PG_USER = 'postgres'
 PG_PASSWORD = 'vick1715'
