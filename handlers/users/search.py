@@ -30,7 +30,7 @@ async def search_ticker(message: Message, state: FSMContext):
     await state.finish()
     ticker_id = int(message.text)
     ticker = await get_orders(ticker_id)
-    if len(ticker) >= 1:
+    if ticker:
         await bot.send_message(message.chat.id, text=show_message(ticker), reply_markup=await cancel())
     else:
         await message.answer('Тикер не найден!', reply_markup=await cancel())
